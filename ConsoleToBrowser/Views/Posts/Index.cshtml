@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ConsoleToBrowser.Post>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Arbetsprov Atea Global Services Mölndal </h2>
+
+
+    @Html.ActionLink("Sort ASC", "SortASC", "Posts")
+    @Html.ActionLink("Sort DESC", "SortDESC", "Posts")
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </th>
+        <th>
+           @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th></th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeStamp)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+        </td>
+    </tr>
+}
+</table>
